@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chatbot</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div id="chatbot-icon">
+    <img src="https://img.icons8.com/ios-filled/50/000000/chat.png" alt="Chatbot Icon">
+  </div>
+
+  <div id="chat-container" class="chat-container">
+    <div class="chat-header">
+      <span>Chatbot</span>
+      <button id="close-btn" class="close-btn">&times;</button>
+    </div>
+
+    <div id="chatbox" class="chatbox"></div>
+
+
+    <div id="inputArea" class="inputArea">
+      <input type="text" id="question" placeholder="Type your question..." />
+      <button id="send">Send</button>
+    </div>
+  </div>
+
+  <script src="/static/chatbot.js"></script>
+</body>
+</html>

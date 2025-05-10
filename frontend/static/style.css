@@ -1,0 +1,129 @@
+/* Chatbot Icon */
+#chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #93cacf;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  #chatbot-icon img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Chat container */
+  .chat-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    max-width: 100%;
+    height: 500px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    display: none; 
+    flex-direction: column;
+    display: flex; 
+  }
+  
+  /* Header section */
+  .chat-header {
+    background-color: #158ab8;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    font-size: 18px;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Styling for messages */
+  .message {
+    margin-bottom: 10px;
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 15px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.4;
+    clear: both; 
+  }
+  
+  /* User messages aligned to the right */
+  .user-message {
+    background-color: #93cacf;
+    align-self: flex-end;
+    text-align: right; 
+    border-radius: 15px 15px 0 15px; 
+  }
+  
+  /* Bot messages aligned to the left */
+  .bot-message {
+    background-color: #b4b1b1;
+    color: rgb(0, 0, 0);
+    align-self: flex-start; 
+    text-align: left; 
+    border-radius: 15px 15px 15px 0; 
+  }
+  
+  /* Chatbox to display messages */
+  #chatbox {
+    overflow-y: auto;
+    flex: 1; 
+    padding: 10px;
+    margin-bottom: 50px; 
+    display: flex;
+    flex-direction: column; 
+  }
+  
+  /* Input Area */
+  .inputArea {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+  }
+  
+  #question {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  #send {
+    padding: 10px 20px;
+    background-color: #1eabe3;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  #send:hover {
+    background-color: #0056b3;
+  }
+  
