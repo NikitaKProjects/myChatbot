@@ -48,13 +48,27 @@ def query_vectorstore(query: str, db_path: str):
         return "Error during the similarity search."
 
     try:
+        if not results:
+            return "Sorry, I don't have information related to that question."
+
         context = "\n\n".join([doc.page_content for doc in results])
         context = truncate_context(context)
     except Exception as e:
         logging.error(f"Error processing context: {e}")
         return "Error processing the content."
 
-    prompt = f"Based on the following context, please answer the question:\n\nContext:\n{context}\n\nQuestion: {query}"
+    # prompt = f"Based on the following context, please answer the question:\n\nContext:\n{context}\n\nQuestion: {query}"
+
+    prompt = f"""
+    Only answer the question using the context below. 
+    If the answer is not in the context, respond with "I don't know" or "Sorry, I can’t answer that."
+
+    Context:
+    {context}
+
+    Question: {query}
+    """
+
 
     try:
         response = llm.invoke(prompt)

@@ -1,3 +1,6 @@
+# prepares data for a Retrieval-Augmented Generation (RAG) chatbot by reading .md files, 
+# splitting them into chunks, converting them to vector embeddings, 
+# and saving them to a FAISS index for later use.
 from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document

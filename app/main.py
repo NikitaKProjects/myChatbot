@@ -60,7 +60,17 @@ async def handle_query(request: Request):
         query = query_request.question
 
         faiss_path = "faiss_index"
-        response = query_vectorstore(query=query, db_path=faiss_path)
+
+        greetings = {"hi", "hello", "hey", "good morning", "good evening", "good afternoon"}
+
+        if query.strip().lower() in greetings:
+            response = "Hello! How can I assist you today?"
+        elif not query.strip() or len(query.strip()) < 3:
+            response = "Please ask a more specific question."
+        else:
+            response = query_vectorstore(query=query, db_path=faiss_path)
+
+        # response = query_vectorstore(query=query, db_path=faiss_path)
 
         return {"response": response}
 

@@ -69,3 +69,11 @@ document.getElementById('question').addEventListener('keypress', function(event)
         document.getElementById('send').click();
     }
 });
+
+window.addEventListener('DOMContentLoaded', function () {
+    const chatbox = document.getElementById('chatbox');
+    const welcomeMessageDiv = document.createElement('div');
+    welcomeMessageDiv.classList.add('message', 'bot-message');
+    welcomeMessageDiv.textContent = 'Hi, how can I help you?';
+    chatbox.appendChild(welcomeMessageDiv);
+});
