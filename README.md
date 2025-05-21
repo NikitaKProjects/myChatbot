@@ -1,6 +1,6 @@
 # 🤖 myChatbot
 
-A conversational AI chatbot powered by Large Language Models (LLMs) using **Retrieval-Augmented Generation (RAG)** with a **FAISS vector store** and **document parsing via Unstructured**.
+A conversational AI chatbot powered by **Large Language Models (LLMs)** using **Retrieval-Augmented Generation (RAG)** with a **FAISS vector store** and **document parsing via Unstructured**.
 
 ---
 
@@ -15,7 +15,7 @@ A conversational AI chatbot powered by Large Language Models (LLMs) using **Retr
 
 ## 🛠️ Complete Setup & Run Instructions
 
-Follow these exact steps to get myChatbot up and running on your machine.
+Follow these exact steps to get myChatbot up and running smoothly on your machine.
 
 ### 1. Clone the Repository
 
@@ -39,14 +39,14 @@ pip install python-magic
 
 ### 3. Fix NLTK Errors (If Any)
 
-If you encounter errors related to missing NLTK data, run the following commands to download them:
+If you encounter errors about missing NLTK data, run the following commands to download them:
 
 ```bash
 python -c "import nltk; nltk.download('punkt')"
 python -c "import nltk; nltk.download('averaged_perceptron_tagger')"
 ```
-Note: If you encounter SSL certificate errors during these downloads, make sure to add the path to your cacert.pem file to the system environment variable REQUESTS_CA_BUNDLE. 
-This helps Python’s requests library verify SSL certificates properly.
+
+**Note**: If you encounter SSL certificate errors during these downloads, you might need to configure your system to properly verify SSL certificates. One common solution is to set the `REQUESTS_CA_BUNDLE` environment variable to the path of your `cacert.pem` file. This helps Python's `requests` library (used by NLTK in some cases) verify SSL certificates properly. The location of `cacert.pem` varies by operating system and Python installation. You may need to search for it on your system or consult your Python documentation.
 
 ### 4. Create the FAISS Vector Store
 
@@ -56,7 +56,17 @@ Generate the FAISS vector store from your documents:
 python create_database.py
 ```
 
-### 5. Run the FastAPI Server
+### 5. Configure Your OpenAI API Key
+
+Create a file named `.env` in the root directory of the project and paste your OpenAI API key into it like this:
+
+```
+OPENAI_API_KEY="your_openai_api_key_here"
+```
+
+**Remember to replace `"your_openai_api_key_here"` with your actual API key.**
+
+### 6. Run the FastAPI Server
 
 Start the FastAPI backend server:
 
@@ -64,7 +74,7 @@ Start the FastAPI backend server:
 uvicorn app.main:app --reload
 ```
 
-### 6. Open the Chatbot in Your Browser
+### 7. Open the Chatbot in Your Browser
 
 Once the server is running, access the chatbot at:
 
